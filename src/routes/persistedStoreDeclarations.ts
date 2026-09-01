@@ -9,6 +9,7 @@ import { loginStore } from "$src/lib/authentication/loginStore";
 import { webmailLoggedIn } from "$components/webmailLogin/userCredsFlagStore";
 import { darkMode } from "$src/lib/globalFunctions/darkMode";
 import { avatarStore } from "$stores/avatar.store";
+import { achievementStore } from "$src/lib/globalFunctions/achievements";
 
 const persistedStores: CapacitorPersistedStore<any>[] = [
     darkMode,
@@ -22,6 +23,7 @@ const persistedStores: CapacitorPersistedStore<any>[] = [
     webmailLoggedIn,
     loginStore,
     avatarStore,
+    achievementStore
     // Add new stores here
 ];
 

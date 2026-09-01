@@ -2,7 +2,7 @@
 	import { averages } from '$lib/functions/gradeAverages/averages';
 	import { neoUniversisGet } from '$lib/dataService';
 	import man from '$lib/assets/man.svg';
-	import { locationOutline, walletOutline, shield, settingsOutline, calendarOutline, shieldOutline, linkOutline, notificationsCircle, cloudOfflineOutline, barbellOutline, addOutline, ellipsisHorizontal } from 'ionicons/icons';
+	import { locationOutline, walletOutline, shield, settingsOutline, calendarOutline, shieldOutline, linkOutline, notificationsCircle, cloudOfflineOutline, barbellOutline, addOutline, ellipsisHorizontal, trophyOutline } from 'ionicons/icons';
 	import woman from '$lib/assets/woman.svg';
 	import avatar from '$lib/assets/.svg';
 	import { register } from 'swiper/element/bundle';
@@ -31,6 +31,7 @@
 	import { getHomepageCache, setHomepageCache } from './homepageCache';
 	import AvatarPreview from '$src/lib/avatar/AvatarPreview.svelte';
 	import { avatarStore } from '$stores/avatar.store';
+  import AchievementsPage from '$src/routes/achievements/page.svelte';
 
 	// Register the custom AppLauncher plugin
 	const AppLauncherPlugin = registerPlugin('AppLauncherPlugin');
@@ -286,6 +287,10 @@
 					</div>
 					<div class="service-button ion-activatable" on:click={openCapacitorSite} aria-hidden>
 						<ion-icon icon={barbellOutline} color="success" class="service-button-icon"></ion-icon>
+						<ion-ripple-effect></ion-ripple-effect>
+					</div>
+          <div class="service-button ion-activatable" on:click={() => {navController.push(AchievementsPage);}} aria-hidden>
+						<ion-icon icon={trophyOutline} color="warning" class="service-button-icon"></ion-icon>
 						<ion-ripple-effect></ion-ripple-effect>
 					</div>
 				</div>
